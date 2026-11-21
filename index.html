@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DO I DO | Cafe</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* Keep Instagram and Location buttons always visible */
+
+.footer-buttons.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =================================
+   MOBILE: KEEP DESKTOP LAYOUT
+================================= */
+
+@media (max-width: 700px) {
+
+    /* تصغير المسافات العامة */
+    .story-section {
+        width: 92%;
+        margin: 65px auto;
+        gap: 15px;
+        flex-direction: row !important;
+    }
+
+    /* الصورة والنص بجانب بعض */
+    .story-image {
+        width: 40% !important;
+        height: auto !important;
+        flex-shrink: 0;
+    }
+
+    .story-image img {
+        width: 100% !important;
+        height: 230px !important;
+        object-fit: cover;
+    }
+
+    .story-content {
+        width: 60%;
+        min-width: 0;
+    }
+
+    .story-content h2 {
+        font-size: 17px;
+        margin: 8px 0;
+    }
+
+    .story-content p {
+        font-size: 8px;
+        line-height: 1.7;
+    }
+
+    .story-label {
+        font-size: 9px;
+    }
+
+    /* العناوين */
+    .section-title {
+        font-size: 30px;
+        margin: 55px auto 30px;
+    }
+
+    .section-title-center {
+        font-size: 15px;
+        line-height: 1.7;
+        margin: 55px auto 30px;
+    }
+
+    .category-title {
+        font-size: 16px;
+        margin: 35px auto 15px;
+    }
+
+    /* كروت الحلويات والمشروبات: 3 أعمدة */
+    .three-images {
+        width: 92%;
+        max-width: 92%;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 15px 8px;
+        margin: 35px auto;
+    }
+
+    .dessert-card {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .dessert-card img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 0.72;
+        object-fit: cover;
+    }
+
+    .card-info {
+        padding: 7px 1px;
+        gap: 3px;
+        font-size: 9px;
+    }
+
+    .your-text {
+        font-size: 9px;
+    }
+
+    /* قوائم المشروبات: 3 أعمدة */
+    .hot-menu {
+        width: 94%;
+        margin: 40px auto;
+        padding: 12px 0;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 7px;
+    }
+
+    .menu-card {
+        min-width: 0;
+        min-height: 85px;
+        padding: 9px 6px;
+    }
+
+    .menu-card h3 {
+        font-size: 13px;
+    }
+
+    .menu-card h4 {
+        font-size: 9px;
+    }
+
+    .menu-card p {
+        font-size: 10px;
+    }
+
+    /* الفيديوهات: 4 بجانب بعض */
+    .creations-section {
+        width: 94%;
+    }
+
+    .creations-track {
+        gap: 7px;
+    }
+
+    .creation-video {
+        flex: 0 0 calc(25% - 6px) !important;
+        height: 170px;
+    }
+
+    /* الأزرار */
+    .footer-buttons {
+        gap: 7px;
+        margin: 20px auto;
+    }
+
+    .btn {
+        font-size: 7px;
+        padding: 8px 10px;
+        letter-spacing: 0;
+    }
+
+    /* الهيدر */
+    .header {
+        padding: 13px 18px;
+    }
+
+    .header-logo {
+        font-size: 14px;
+    }
+
+    .language-btn {
+        font-size: 10px;
+    }
+
+    /* الفيديو الرئيسي */
+    .hero-video {
+        height: 75svh;
+        min-height: 350px;
+    }
+
+    /* منع تجاوز العناصر عرض الجوال */
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* REMOVE CARD ZOOM */
+
+.dessert-card {
+    overflow: hidden;
+}
+
+.dessert-card img {
+    transform: none !important;
+    transition: filter .4s ease !important;
+}
+
+.dessert-card:hover img {
+    transform: none !important;
+    filter: none !important;
+}
+
+.dessert-card:hover .card-info {
+    transform: none !important;
+}
+
+
+
+
+
+
+
+/* FIX STORY IMAGE FRAME */
+
+.story-image {
+    width: 50%;
+    height: 675px;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+/* إطار الصورة */
+.story-image::after {
+    inset: 0;
+    z-index: 3;
+    border: 1px solid rgba(199,164,119,.55);
+    pointer-events: none;
+}
+
+/* الجوال */
+@media (max-width: 700px) {
+    .story-image {
+        width: 100%;
+        height: 450px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #350616;
+    margin: 0;
+    direction: ltr;
+}
+
+/* HEADER */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.4s ease;
+}
+
+.header.scrolled {
+    padding: 15px 45px;
+    background: rgba(53, 6, 22, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header-logo {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.language-menu {
+    position: relative;
+    font-family: Arial, sans-serif;
+}
+
+.language-btn {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.language-options {
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    min-width: 65px;
+    background: transparent;
+    text-align: center;
+}
+
+.language-options.show {
+    display: block;
+}
+
+.language-options button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.language-options button:hover {
+    opacity: 0.6;
+}
+
+/* HERO VIDEO */
+
+.hero-video {
+    width: 100%;
+    height: 720px;
+    object-fit: cover;
+    display: block;
+    border: none;
+}
+
+/* STORY SECTION */
+
+.story-section {
+    width: 90%;
+    max-width: 1250px;
+    margin: 150px auto;
+    display: flex;
+    align-items: center;
+    gap: 65px;
+    direction: ltr;
+}
+
+.story-image {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.story-image img {
+    width: 350px;
+    height: 450px;
+    display: block;
+    object-fit: cover;
+}
+
+.story-content {
+    flex: 1;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    text-align: left;
+}
+
+.story-label {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.story-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 43px;
+    font-weight: 500;
+    margin: 20px 0 25px;
+    color: #fff;
+}
+
+.story-content p {
+    font-family: 'Cairo', sans-serif;
+    font-size: 13px;
+    line-height: 2.2;
+    color: #ffffff;
+    margin-bottom: 18px;
+    font-weight: 300;
+}
+
+/* SECTION TITLES */
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 58px;
+    line-height: 0.85;
+    text-align: left;
+    direction: ltr;
+    color: #ffffff;
+    width: 84%;
+    margin: 100px auto 60px;
+}
+
+.section-title-center {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 0.85;
+    text-align: center;
+    direction: ltr;
+    color: #ffffff;
+    width: 84%;
+    margin: 100px auto 60px;
+}
+
+/* CATEGORY TITLES */
+
+.category-title {
+    color: #fff;
+    text-align: left;
+    direction: ltr;
+    width: 84%;
+    margin: 60px auto 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* PRODUCT IMAGES */
+
+.three-images {
+    width: fit-content;
+    max-width: 95%;
+    margin: 120px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 35px 15px;
+    justify-content: center;
+}
+
+.dessert-card {
+    width: 250px;
+}
+
+.dessert-card img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    direction: rtl;
+    padding: 14px 2px;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+}
+
+.your-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* MENU SECTIONS */
+
+.hot-menu {
+    width: 96%;
+    max-width: 900px;
+    margin: 80px auto;
+    background: #350616;
+    padding: 25px 0;
+    color: #eee7d9;
+    text-align: left;
+}
+
+.menu-heading {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    direction: ltr;
+    gap: 25px;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+}
+
+.menu-heading div {
+    flex: 1;
+    height: 1px;
+    background: #350616;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.menu-card {
+    border: 1px solid #5a2638;
+    border-radius: 10px;
+    padding: 17px 20px;
+    min-height: 128px;
+    background: #350616;
+}
+
+.menu-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+    margin: 0 0 3px;
+    color: #eee7d9;
+}
+
+.menu-card h4 {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 5px 0;
+    color: #eee7d9;
+}
+
+.menu-card p {
+    color: #fff1d9;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* FOOTER BUTTONS */
+
+.footer-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 20px;
+    border-radius: 50px;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-light {
+    background: #eee7d9;
+    color: #25221e;
+    border: 1px solid #eee7d9;
+}
+
+.btn-dark {
+    background: transparent;
+    color: #eee7d9;
+    border: 1px solid #eee7d9;
+}
+
+.btn:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+/* CREATIONS */
+
+.creations-section {
+    width: 90%;
+    max-width: 1700px;
+    margin: 25px auto 100px;
+    position: relative;
+    direction: ltr;
+    overflow: hidden;
+}
+
+.creations-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.creations-track::-webkit-scrollbar {
+    display: none;
+}
+
+.creation-video {
+    flex: 0 0 calc(25% - 9px);
+    height: 460px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    background: #350616;
+}
+
+/* ARABIC MODE */
+
+body.arabic,
+body.arabic * {
+    font-family: 'Tajawal', sans-serif !important;
+    font-weight: 300;
+}
+
+body.arabic {
+    direction: rtl;
+}
+
+body.arabic .header {
+    flex-direction: row-reverse;
+}
+
+body.arabic .header-logo {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 400;
+}
+
+body.arabic .language-options {
+    right: auto;
+    left: 0;
+}
+
+body.arabic .story-section {
+    direction: rtl;
+}
+
+body.arabic .story-content {
+    text-align: right;
+}
+
+body.arabic .story-content h2,
+body.arabic .story-content h3 {
+    font-style: normal;
+}
+
+body.arabic .section-title,
+body.arabic .section-title-center {
+    direction: rtl;
+    text-align: center;
+    font-style: normal;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+body.arabic .section-title {
+    text-align: right;
+}
+
+body.arabic .category-title {
+    direction: rtl;
+    text-align: right;
+}
+
+body.arabic .menu-heading {
+    direction: rtl;
+    flex-direction: row-reverse;
+    text-align: right;
+    letter-spacing: 0;
+}
+
+body.arabic .hot-menu {
+    text-align: right;
+}
+
+body.arabic .menu-card {
+    text-align: right;
+}
+
+body.arabic .card-info {
+    direction: rtl;
+}
+
+body.arabic .your-text {
+    font-style: normal;
+}
+
+body.arabic .footer-buttons {
+    direction: rtl;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .header {
+        padding: 20px;
+    }
+
+    .header.scrolled {
+        padding: 13px 20px;
+    }
+
+    .header-logo {
+        font-size: 17px;
+    }
+
+    .hero-video {
+        height: 550px;
+    }
+
+    .story-section {
+        width: 90%;
+        margin: 90px auto;
+        gap: 25px;
+        flex-direction: column;
+    }
+
+    .story-image {
+        width: 100%;
+    }
+
+    .story-image img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .story-content {
+        width: 100%;
+    }
+
+    .story-content h2 {
+        font-size: 32px;
+    }
+
+    .section-title {
+        font-size: 43px;
+    }
+
+    .section-title-center {
+        font-size: 23px;
+        line-height: 1.5;
+    }
+
+    .three-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 12px;
+        margin: 60px auto;
+    }
+
+    .dessert-card {
+        width: 100%;
+    }
+
+    .dessert-card img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .card-info {
+        padding: 10px 2px;
+    }
+
+    .your-text {
+        font-size: 12px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .menu-card {
+        padding: 13px 10px;
+    }
+
+    .menu-card h3 {
+        font-size: 19px;
+    }
+
+    .menu-card h4 {
+        font-size: 11px;
+    }
+
+    .creation-video {
+        flex: 0 0 calc(50% - 6px);
+        height: 300px;
+    }
+
+    .creations-section {
+        width: 94%;
+    }
+
+    .footer-buttons {
+        padding: 0 10px;
+    }
+
+    .btn {
+        font-size: 8px;
+        padding: 9px 14px;
+    }
+
+    body.arabic .story-section {
+        flex-direction: column;
+    }
+}
+
+/* ================= PREMIUM MOTION LAYER ================= */
+
+:root {
+    --wine: #350616;
+    --wine-light: #5a2638;
+    --cream: #eee7d9;
+    --gold: #c7a477;
+    --ease: cubic-bezier(.2,.75,.25,1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background:
+      radial-gradient(ellipse at 12% 18%, rgba(133,53,79,.18), transparent 32%),
+      radial-gradient(ellipse at 88% 62%, rgba(199,164,119,.08), transparent 30%),
+      var(--wine);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: .12;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--wine);
+}
+
+.scroll-progress {
+    position: fixed;
+    inset: 0 0 auto;
+    height: 3px;
+    z-index: 2000;
+    background: rgba(238,231,217,.12);
+}
+
+.scroll-progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #a66a73, var(--gold));
+    box-shadow: 0 0 12px rgba(199,164,119,.65);
+}
+
+.header {
+    transition: padding .4s var(--ease), background .4s, box-shadow .4s;
+}
+
+.header.scrolled {
+    background: rgba(35,4,14,.78);
+    box-shadow: 0 10px 35px rgba(0,0,0,.18);
+    border-bottom: 1px solid rgba(238,231,217,.08);
+}
+
+.header-logo {
+    transition: letter-spacing .35s, opacity .3s;
+}
+
+.header-logo:hover {
+    letter-spacing: 5px;
+    opacity: .8;
+}
+
+.language-btn {
+    transition: opacity .25s, transform .25s;
+}
+
+.language-btn:hover {
+    opacity: .7;
+    transform: translateY(-2px);
+}
+
+.language-options {
+    padding: 7px;
+    border: 1px solid rgba(238,231,217,.18);
+    border-radius: 12px;
+    background: rgba(35,4,14,.94);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+.language-options button {
+    border-radius: 8px;
+    transition: background .2s;
+}
+
+.language-options button:hover {
+    background: rgba(238,231,217,.12);
+    opacity: 1;
+}
+
+.hero-video {
+    height: min(100svh, 850px);
+    min-height: 560px;
+    object-position: center;
+    filter: saturate(.88);
+}
+
+.hero-video::selection {
+    background: transparent;
+}
+
+.story-section {
+    position: relative;
+}
+
+.story-image {
+    position: relative;
+}
+
+.story-image::after {
+    content: "";
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    border: 1px solid rgba(199,164,119,.55);
+    pointer-events: none;
+    transition: transform .6s var(--ease);
+}
+
+.story-image:hover::after {
+    transform: translate(7px,7px);
+}
+
+.story-image img {
+    position: relative;
+    z-index: 1;
+    transition: transform .8s var(--ease), filter .6s;
+    filter: saturate(.82);
+}
+
+.story-image:hover img {
+    transform: scale(1.025);
+    filter: saturate(1.08);
+}
+
+.story-content h2 {
+    letter-spacing: -.02em;
+}
+
+.section-title,
+.section-title-center {
+    text-wrap: balance;
+}
+
+.section-title {
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 74px;
+    height: 1px;
+    margin-top: 26px;
+    background: var(--gold);
+    opacity: .8;
+}
+
+.menu-heading div {
+    background: linear-gradient(90deg, rgba(199,164,119,.7), transparent);
+}
+
+.menu-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform .45s var(--ease), border-color .35s, background .35s, box-shadow .35s;
+}
+
+.menu-card::before {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    right: -55px;
+    top: -55px;
+    border-radius: 50%;
+    background: rgba(199,164,119,.09);
+    transition: transform .6s var(--ease);
+}
+
+.menu-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(199,164,119,.75);
+    background: #421023;
+    box-shadow: 0 18px 35px rgba(0,0,0,.2);
+}
+
+.menu-card:hover::before {
+    transform: scale(2.2);
+}
+
+.menu-card h3,
+.menu-card p {
+    position: relative;
+}
+
+.three-images {
+    margin-top: 75px;
+}
+
+.dessert-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.dessert-card img {
+    transition: transform .8s var(--ease), filter .6s;
+    filter: saturate(.88);
+}
+
+.dessert-card:hover img {
+    transform: scale(1.07);
+    filter: saturate(1.08);
+}
+
+.dessert-card .card-info {
+    transition: transform .35s var(--ease);
+}
+
+.dessert-card:hover .card-info {
+    transform: translateY(-3px);
+}
+
+.card-info {
+    gap: 12px;
+}
+
+.your-text {
+    transition: color .25s;
+}
+
+.dessert-card:hover .your-text {
+    color: var(--gold);
+}
+
+.creation-video {
+    transition: transform .5s var(--ease), filter .5s;
+    filter: saturate(.85);
+}
+
+.creation-video:hover {
+    transform: scale(.985);
+    filter: saturate(1.1);
+}
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-110%);
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.25), transparent);
+    transition: transform .65s var(--ease);
+}
+
+.btn:hover::after {
+    transform: translateX(110%);
+}
+
+.btn:hover {
+    opacity: 1;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1200;
+    width: 43px;
+    height: 43px;
+    border: 1px solid rgba(238,231,217,.35);
+    border-radius: 50%;
+    color: var(--cream);
+    background: rgba(35,4,14,.78);
+    font-size: 22px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: .3s var(--ease);
+    backdrop-filter: blur(10px);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--cream);
+    color: var(--wine);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .85s var(--ease), transform .85s var(--ease);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dessert-card.reveal {
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.menu-card.reveal {
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.section-title-center {
+    transition: letter-spacing .5s;
+}
+
+@media (hover: hover) {
+    .section-title-center:hover {
+        letter-spacing: .015em;
+    }
+}
+
+body.arabic .story-image::after {
+    inset: 18px 18px -18px -18px;
+}
+
+body.arabic .story-image:hover::after {
+    transform: translate(-7px,7px);
+}
+
+body.arabic .menu-heading div {
+    background: linear-gradient(270deg, rgba(199,164,119,.7), transparent);
+}
+
+body.arabic .back-to-top {
+    right: auto;
+    left: 24px;
+}
+
+@media (max-width: 700px) {
+    .hero-video {
+        height: 78svh;
+        min-height: 480px;
+    }
+
+    .story-image::after {
+        inset: 12px -12px -12px 12px;
+    }
+
+    .menu-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .back-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 39px;
+        height: 39px;
+    }
+
+    body.arabic .back-to-top {
+        right: auto;
+        left: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="scroll-progress" aria-hidden="true">
+    <span id="scrollProgress"></span>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- HEADER -->
+
+<header class="header">
+    <a href="#" class="header-logo">DO I DO</a>
+
+    <div class="language-menu">
+        <button class="language-btn" onclick="toggleLanguageMenu()">
+            <span id="currentLanguage">EN</span> ⌄
+        </button>
+
+        <div class="language-options" id="languageOptions">
+            <button onclick="changeLanguage('ar')">AR</button>
+            <button onclick="changeLanguage('en')">EN</button>
+        </div>
+    </div>
+</header>
+
+<!-- HERO VIDEO -->
+
+<video class="hero-video" autoplay muted loop playsinline>
+    <source src="photo/video_2026-11-20_10-10-44.mp4" type="video/mp4">
+</video>
+
+<!-- SEATING INSTRUCTIONS -->
+
+<h2 class="section-title-center"
+    data-en="WELCOME TO THE SEATING AREA. WE HOPE YOU WILL ADHERE TO THE FOLLOWING INSTRUCTIONS TO ENSURE YOUR COMFORT AND THE COMFORT OF EVERYONE."
+    data-ar="نرحب بكم في مساحة الجلوس، ونأمل منكم الالتزام بالتعليمات التالية لضمان راحتكم وراحة الجميع.">
+
+    WELCOME TO THE SEATING AREA. WE HOPE YOU WILL ADHERE TO THE FOLLOWING INSTRUCTIONS TO ENSURE YOUR COMFORT AND THE COMFORT OF EVERYONE.
+</h2>
+
+<h2 class="section-title-center"
+    data-en="• Sitting time: 45 minutes maximu&#x6D;<br><br>• Wearing shorts is prohibite&#x64;<br><br>• Bringing outside food is prohibite&#x64;<br><br>• Children aged 10 and above are allowed"
+    data-ar="• مدة الجلوس: 45 دقيقة كحد أقص&#x649;<br><br>• يمنع ارتداء الملابس القصير&#x629;<br><br>• يمنع إدخال الأطعمة من الخار&#x62C;<br><br>• يسمح بدخول الأطفال بعمر 10 سنة فما فوق">
+
+    • Sitting time: 45 minutes maximum<br><br>
+    • Wearing shorts is prohibited<br><br>
+    • Bringing outside food is prohibited<br><br>
+    • Children aged 10 and above are allowed
+</h2>
+
+<!-- STORY -->
+
+<section class="story-section">
+
+    <div class="story-image">
+        <img src="photo/image copy 12.png" alt="DO I DO">
+    </div>
+
+    <div class="story-content">
+        <span class="story-label">DO I DO</span>
+
+        <h2 data-en="YES, GOOD VIBES."
+            data-ar="نعم، أجواء جميلة.">
+            YES, GOOD VIBES.
+        </h2>
+
+        <p
+            data-en="Coffee is more than just a drink—it's a daily ritual that awakens the senses and brings people together. From the rich aroma of freshly ground beans to the smooth, comforting taste of a perfectly brewed cup, coffee transforms ordinary moments into something special. Whether you enjoy a bold espresso, a creamy latte, or a refreshing cold brew, every sip tells a story of passion, craftsmanship, and love for the art of coffee. At our café, we're dedicated to making each cup a moment of joy and connection."
+            data-ar="القهوة ليست مجرد مشروب، بل هي طقس يومي يوقظ الحواس ويجمع الناس. من رائحة حبوب القهوة الطازجة إلى مذاق القهوة المحضّرة بإتقان، تجعل القهوة اللحظات العادية أكثر تميزاً. سواء كنت تفضل الإسبريسو الغني، أو اللاتيه الكريمي، أو القهوة الباردة المنعشة، فإن كل رشفة تحكي قصة شغف وإبداع وحب لفن القهوة. في مقهانا، نحرص على أن يكون كل كوب لحظة من المتعة والتواصل.">
+
+            Coffee is more than just a drink—it's a daily ritual that awakens the senses and brings people together. From the rich aroma of freshly ground beans to the smooth, comforting taste of a perfectly brewed cup, coffee transforms ordinary moments into something special. Whether you enjoy a bold espresso, a creamy latte, or a refreshing cold brew, every sip tells a story of passion, craftsmanship, and love for the art of coffee. At our café, we're dedicated to making each cup a moment of joy and connection.
+        </p>
+    </div>
+</section>
+
+<!-- MAIN TITLE -->
+
+<h1 class="section-title"
+    data-en="Where indulgence, <br>
+    becomes art."
+    data-ar="حيث تتحول المتعة，<br>
+    إلى فن.">
+
+    Where indulgence,
+    <br>
+    becomes art.
+</h1>
+
+<!-- HOT DRINK -->
+
+<section class="hot-menu">
+
+    <div class="menu-heading">
+        <span data-en="HOT DRINK" data-ar="المشروبات الساخنة">HOT DRINK</span>
+        <div></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <h3 data-en="Flat White" data-ar="فلات وايت">Flat White</h3>
+            <br>
+            <p>16 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Hot Latte" data-ar="لاتيه ساخن">Hot Latte</h3>
+            <br>
+            <p>17 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Cappuccino" data-ar="كابتشينو">Cappuccino</h3>
+            <br>
+            <p>18 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Cortado" data-ar="كورتادو">Cortado</h3>
+            <br>
+            <p>15 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Americano" data-ar="أمريكانو">Americano</h3>
+            <br>
+            <p>15 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Espresso" data-ar="إسبريسو">Espresso</h3>
+            <br>
+            <p>11 SAR</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- DRIP DRINK -->
+
+<section class="hot-menu">
+
+    <div class="menu-heading">
+        <span data-en="DRIP DRINK" data-ar="القهوة المقطرة">DRIP DRINK</span>
+        <div></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <h3 data-en="Coffee of the Day" data-ar="قهوة اليوم">Coffee of the Day</h3>
+            <h4 data-en="Small" data-ar="صغير">Small</h4>
+            <p>13 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Coffee of the Day" data-ar="قهوة اليوم">Coffee of the Day</h3>
+            <h4 data-en="Big" data-ar="كبير">Big</h4>
+            <p>16 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Iced Coffee Drip" data-ar="قهوة مقطرة باردة">Iced Coffee Drip</h3>
+            <br>
+            <p>23 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="V60 Coffee" data-ar="قهوة V60">V60 Coffee</h3>
+            <br>
+            <p>19 SAR</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ICE DRINK -->
+
+<section class="hot-menu">
+
+    <div class="menu-heading">
+        <span data-en="ICE DRINK" data-ar="المشروبات الباردة">ICE DRINK</span>
+        <div></div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+            <h3 data-en="Iced Hibiscus" data-ar="كركديه بارد">Iced Hibiscus</h3>
+            <br>
+            <p>22 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Iced Spanish Latte" data-ar="سبانيش لاتيه بارد">Iced Spanish Latte</h3>
+            <br>
+            <p>21 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Iced Americano" data-ar="أمريكانو بارد">Iced Americano</h3>
+            <br>
+            <p>16 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Iced Latte" data-ar="لاتيه بارد">Iced Latte</h3>
+            <br>
+            <p>20 SAR</p>
+        </div>
+
+        <div class="menu-card">
+            <h3 data-en="Iced Freddo" data-ar="فريدو بارد">Iced Freddo</h3>
+            <br>
+            <p>18 SAR</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- SWEET DO -->
+
+<h2 class="category-title"
+    data-en="SWEET DO"
+    data-ar="حلويات دو">
+    SWEET DO
+</h2>
+
+<section class="three-images">
+
+    <div class="dessert-card">
+        <img src="photo/image copy.png" alt="Fruity Cake">
+        <div class="card-info">
+            <span class="your-text">29 SAR</span>
+            <span class="your-text" data-en="Fruity Cake" data-ar="فروتي كيك">Fruity Cake</span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 2.png" alt="Classic Tiramisu">
+        <div class="card-info">
+            <span class="your-text">29 SAR</span>
+            <span class="your-text" data-en="Classic Tiramisu" data-ar="تيراميسو كلاسيك">Classic Tiramisu</span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 3.png" alt="Mini Dou">
+        <div class="card-info">
+            <span class="your-text">11 SAR</span>
+            <span class="your-text" data-en="Mini Dou" data-ar="ميني دو">Mini Dou</span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 4.png" alt="Tarte Dou">
+        <div class="card-info">
+            <span class="your-text">28 SAR</span>
+            <span class="your-text" data-en="Tarte Dou" data-ar="تارت دو">Tarte Dou</span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 5.png" alt="Matilda Cake">
+        <div class="card-info">
+            <span class="your-text">27 SAR</span>
+            <span class="your-text" data-en="Matilda Cake" data-ar="كيكة ماتيلدا">Matilda Cake</span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 6.png" alt="Classic Cheese Madrid">
+        <div class="card-info">
+            <span class="your-text">28 SAR</span>
+            <span class="your-text" data-en="Classic Cheese Madrid" data-ar="تشيز كيك كلاسيك مدريد">CLASSIC CHEESE MADRID</span>
+        </div>
+    </div>
+
+</section>
+
+<!-- SPECIAL DRINKS -->
+
+<h2 class="category-title"
+    data-en="SPECIAL DRINKS"
+    data-ar="المشروبات الخاصة">
+    SPECIAL DRINKS
+</h2>
+
+<section class="three-images">
+
+    <div class="dessert-card">
+        <img src="photo/image copy 7.png" alt="Matcha Classic">
+        <div class="card-info">
+            <span class="your-text">25 SAR</span>
+            <span class="your-text" data-en="Matcha Classic" data-ar="ماتشا كلاسيك">Matcha Classic</span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 8.png" alt="Alfredo Espresso">
+        <div class="card-info">
+            <span class="your-text">18 SAR</span>
+            <span class="your-text" data-en="Alfredo Espresso" data-ar="ألفريدو إسبريسو">Alfredo espresso</span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 9.png" alt="Blue Matcha">
+        <div class="card-info">
+            <span class="your-text">27 SAR</span>
+            <span class="your-text" data-en="Blue Matcha" data-ar="ماتشا بلو">Blue Matha</span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 11.png" alt="Matcha Salted Caramel">
+        <div class="card-info">
+            <span class="your-text">26 SAR</span>
+            <span class="your-text"  data-ar="ماتشا سالتد كراميل" data-en="Matcha Salted Caramel">  </span>
+        </div>
+    </div>
+
+    <div class="dessert-card">
+        <img src="photo/image copy 13.png" alt="Do Drink">
+        <div class="card-info">
+            <span class="your-text">25 SAR</span>
+            <span class="your-text" data-en="Do Drink" data-ar="دو درينك">Do Drink</span>
+        </div>
+    </div>
+
+</section>
+
+<!-- YOUR CREATIONS -->
+
+<h2 class="section-title-center"
+    data-en="Your Creations"
+    data-ar="إبداعاتكم">
+    Your Creations
+</h2>
+
+<section class="creations-section">
+
+    <div class="creations-track" id="creationsTrack">
+
+        <video class="creation-video" playsinline preload="metadata" autoplay muted loop>
+            <source src="photo/video_2026-11-15_20-38-19.mp4" type="video/mp4">
+        </video>
+
+        <video class="creation-video" playsinline preload="metadata" autoplay muted loop>
+            <source src="photo/video_2026-11-15_20-39-49.mp4" type="video/mp4">
+        </video>
+
+        <video class="creation-video" playsinline preload="metadata" autoplay muted loop>
+            <source src="photo/video_2026-11-15_20-41-22.mp4" type="video/mp4">
+        </video>
+
+        <video class="creation-video" playsinline preload="metadata" autoplay muted loop>
+            <source src="photo/video_2026-11-15_20-42-43.mp4" type="video/mp4">
+        </video>
+
+    </div>
+</section>
+
+<!-- FINAL MESSAGE -->
+
+<h2 class="section-title-center"
+    data-en="You're Always Welcom&#x65;<br><br>Find us in Riyadh, or follow along for the small moments we share daily"
+    data-ar="أنتم دائماً موضع ترحي&#x628;<br><br>زورونا في الرياض، وتابعونا لنشارككم أجمل لحظاتنا اليومية.">
+
+    You're Always Welcome<br><br>
+    Find us in Riyadh, or follow along for the small moments we share daily
+</h2>
+
+<!-- FOOTER -->
+
+<div class="footer-buttons">
+
+    <a href="https://www.google.com/maps/search/?api=1&query=DO%20I%20DO%20Cafe%2C%20Al%20Abu%20Haimid%2C%20An%20Nuzhah%2C%20Riyadh%2012471"
+       target="_blank"
+       class="btn btn-light"
+       data-en="📍 FIND OUR LOCATION"
+       data-ar="📍 موقعنا على الخريطة">
+
+       📍 FIND OUR LOCATION
+    </a>
+
+    <a href="https://www.instagram.com/doido.sa/"
+       target="_blank"
+       class="btn btn-dark"
+       data-en="📸 FOLLOW ON INSTAGRAM"
+       data-ar="📸 تابعونا على إنستغرام">
+
+       📸 FOLLOW ON INSTAGRAM
+    </a>
+
+</div>
+
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+
+
+/* LANGUAGE MENU */
+
+function toggleLanguageMenu() {
+    document.getElementById("languageOptions")
+        .classList.toggle("show");
+}
+
+/* CHANGE LANGUAGE */
+
+function changeLanguage(lang) {
+
+    document.documentElement.lang = lang;
+
+    document.documentElement.dir =
+        lang === "ar" ? "rtl" : "ltr";
+
+    document.body.classList.toggle(
+        "arabic",
+        lang === "ar"
+    );
+
+    document.getElementById("currentLanguage").textContent =
+        lang.toUpperCase();
+
+    /* TRANSLATE ALL TEXTS */
+
+    document.querySelectorAll("[data-en][data-ar]").forEach(element => {
+        element.innerHTML =
+            element.getAttribute("data-" + lang);
+    });
+
+    /* SAVE LANGUAGE */
+
+    localStorage.setItem("siteLanguage", lang);
+
+    /* CLOSE LANGUAGE MENU */
+
+    document.getElementById("languageOptions")
+        .classList.remove("show");
+}
+
+/* RESTORE SAVED LANGUAGE */
+
+window.addEventListener("DOMContentLoaded", function() {
+
+    const savedLanguage =
+        localStorage.getItem("siteLanguage") || "en";
+
+    changeLanguage(savedLanguage);
+});
+
+/* HEADER SCROLL ANIMATION */
+
+window.addEventListener("scroll", function() {
+
+    const header = document.querySelector(".header");
+
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+
+/* CLOSE MENU WHEN CLICKING OUTSIDE */
+
+document.addEventListener("click", function(event) {
+
+    const menu = document.querySelector(".language-menu");
+
+    if (!menu.contains(event.target)) {
+        document.getElementById("languageOptions")
+            .classList.remove("show");
+    }
+});
+
+/* PREMIUM INTERACTIONS */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const progress = document.getElementById("scrollProgress");
+    const topButton = document.getElementById("backToTop");
+    const header = document.querySelector(".header");
+
+    const updateScrollUI = () => {
+
+        const scrollable =
+            document.documentElement.scrollHeight - window.innerHeight;
+
+        const percent = scrollable > 0
+            ? (window.scrollY / scrollable) * 100
+            : 0;
+
+        if (progress) progress.style.width = percent + "%";
+
+        if (header) {
+            header.classList.toggle("scrolled", window.scrollY > 50);
+        }
+
+        if (topButton) {
+            topButton.classList.toggle("visible", window.scrollY > 500);
+        }
+    };
+
+    window.addEventListener("scroll", updateScrollUI, { passive: true });
+    updateScrollUI();
+
+    topButton?.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Reveal sections and cards as they enter the viewport.
+
+    const revealTargets = document.querySelectorAll(
+        ".story-section, .section-title, .section-title-center, .hot-menu, .category-title, .dessert-card, .menu-card, .creations-section, .footer-buttons"
+    );
+
+    revealTargets.forEach((element, index) => {
+
+        element.classList.add("reveal");
+
+        if (
+            element.classList.contains("dessert-card") ||
+            element.classList.contains("menu-card")
+        ) {
+            element.style.setProperty(
+                "--reveal-delay",
+                (index % 6) * 65 + "ms"
+            );
+        }
+    });
+
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                // شغّل الحركة عند دخول العنصر، وأعده لوضع البداية عند خروجه
+                // حتى تتكرر الحركة في كل مرة يرجع فيها المستخدم للعنصر.
+
+                entry.target.classList.toggle(
+                    "is-visible",
+                    entry.isIntersecting
+                );
+            });
+
+        }, {
+            threshold: 0.12,
+            rootMargin: "0px 0px -35px 0px"
+        });
+
+        revealTargets.forEach(element => observer.observe(element));
+
+    } else {
+
+        revealTargets.forEach(element => {
+            element.classList.add("is-visible");
+        });
+    }
+
+    // Subtle stagger for menu tiles.
+
+    document.querySelectorAll(".menu-card").forEach((card, index) => {
+
+        card.classList.add("reveal");
+
+        card.style.setProperty(
+            "--reveal-delay",
+            (index % 3) * 80 + "ms"
+        );
+    });
+
+    // Pause off-screen videos to keep the page lighter.
+
+    if ("IntersectionObserver" in window) {
+
+        const videoObserver = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                const video = entry.target;
+
+                if (entry.isIntersecting) {
+
+                    const playPromise = video.play();
+
+                    if (playPromise?.catch) {
+                        playPromise.catch(() => {});
+                    }
+
+                } else {
+
+                    video.pause();
+                }
+            });
+
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll("video").forEach(video => {
+            videoObserver.observe(video);
+        });
+    }
+
+});
+
+</script>
+
+</body>
+</html>
